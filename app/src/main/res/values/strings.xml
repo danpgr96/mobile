@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Mobile</string>
-    <string name="tittleText">Prueba</string>
+    <string name="tittleText">R P S Challenge</string>
+    <string name="play">Jugar</string>
+    <string name="rules">Reglas</string>
+    <string name="demo">Demo</string>
+    <string name="salir">Salir</string>
+    <string name="ia">IA</string>
+    <string name="jugador">Jugador</string>
+    <string name="cero">0</string>
+    <string name="ganaste">¡Ganaste!</string>
+    <string name="perdiste">¡Perdiste!</string>
+    <string name="empataste">¡Empate!</string>
+    <string name="empezar">¡Empieza!</string>
+    <string name="jugador1">oun ɹopɐƃnɾ</string>
+    <string name="jugador2">Jugador dos</string>
+    <string name="startDemoGame">Jugar</string>
 </resources>
