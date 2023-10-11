@@ -25,26 +25,7 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center">
-
-                    <Button
-                        android:id="@+id/btnEmpezarJ5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15sp"
-                        android:fontFamily="serif-monospace"
-                        android:onClick="startGame"
-                        android:text="@string/startDemoGame"
-                        android:textColor="#FFF8DC"
-                        android:background="@drawable/oval_button"
-                        android:textSize="35sp"
-                        android:textStyle="bold" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="30sp"
+                    android:layout_marginTop="50sp"
                     android:layout_marginBottom="30sp"
                     android:gravity="center">
 
@@ -84,7 +65,7 @@
                         android:gravity="center"
                         android:text="@string/jugador1"
                         android:textColor="@android:color/background_dark"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textStyle="bold" />
                 </TableRow>
 
@@ -101,7 +82,7 @@
                         android:layout_marginBottom="25sp"
                         android:gravity="center"
                         android:textColor="@android:color/background_dark"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textStyle="bold" />
 
                 </TableRow>
@@ -118,7 +99,7 @@
                         android:gravity="center"
                         android:text="@string/jugador2"
                         android:textColor="@android:color/background_dark"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textStyle="bold" />
                 </TableRow>
 
@@ -153,10 +134,11 @@
                 </TableRow>
 
                 <LinearLayout
+                    android:id="@+id/lineaDemoGame"
                     android:layout_width="fill_parent"
                     android:layout_height="3dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginTop="25sp"
                     android:background="#000000"
                     android:orientation="horizontal" />
 
@@ -167,13 +149,27 @@
 
                     <ImageButton
                         android:id="@+id/ibVolverDemo"
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15sp"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:onClick="volver"
                         app:srcCompat="@drawable/back" />
+
+                    <Button
+                        android:id="@+id/btnEmpezarJ5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="104dp"
+                        android:layout_marginTop="15sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_color"
+                        android:fontFamily="serif-monospace"
+                        android:onClick="startGame"
+                        android:text="@string/startDemoGame"
+                        android:textColor="#000000"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
 
                 </TableRow>
 

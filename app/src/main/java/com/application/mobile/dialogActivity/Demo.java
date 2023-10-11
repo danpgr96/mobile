@@ -10,10 +10,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.application.mobile.R;
+
+import java.util.Objects;
 
 public class Demo extends AppCompatActivity {
 
@@ -21,6 +24,8 @@ public class Demo extends AppCompatActivity {
     private Button btnEmpezarJ5;
     private ImageButton iBJugador1,iBJugador2,volver;
     private Integer contJ1 = 0, contJ2 = 0;
+
+    private LinearLayout linea;
     private boolean isPulsado1 = false, isPulsado2 = false;
     private final Handler handlerJ1 = new Handler();
     private final Handler handlerJ2 = new Handler();
@@ -61,6 +66,7 @@ public class Demo extends AppCompatActivity {
         volver = findViewById(R.id.ibVolverDemo);
         btnEmpezarJ5 = findViewById(R.id.btnEmpezarJ5);
         contador = findViewById(R.id.tvContadorJ5);
+        linea = findViewById(R.id.lineaDemoGame);
 
         iBJugador1.setEnabled(false);
         iBJugador2.setEnabled(false);
@@ -93,20 +99,20 @@ public class Demo extends AppCompatActivity {
         btnEmpezarJ5.setVisibility(View.INVISIBLE);
         btnEmpezarJ5.setEnabled(false);
         volver.setVisibility(View.INVISIBLE);
+        linea.setVisibility(View.INVISIBLE);
         volver.setEnabled(false);
     }
 
     public void iniciarContadorJugador1(){
-       handlerJ1.postDelayed(contadorRunnableJ1, 100);
+       handlerJ1.postDelayed(contadorRunnableJ1, 1);
     }
 
     public void iniciarContadorJugador2(){
-        handlerJ2.postDelayed(contadorRunnableJ2, 100);
+        handlerJ2.postDelayed(contadorRunnableJ2, 1);
     }
 
     public void contadorTime() {
-
-        new CountDownTimer(20000, 1) {
+        new CountDownTimer(10000, 1) {
             @Override
             public void onTick(long millisUntilFinished) {
                 contador.setText(String.valueOf(millisUntilFinished / 1000 + 1));
@@ -114,50 +120,33 @@ public class Demo extends AppCompatActivity {
                 puntuacion2.setText(String.valueOf(contJ2));
             }
 
+            @SuppressLint("UnsafeIntentLaunch")
             @Override
             public void onFinish() {
                 iBJugador1.setEnabled(false);
                 iBJugador2.setEnabled(false);
+                isPulsado1 = false;
+                isPulsado2 = false;
 
-                if (contJ1 > contJ2) {
-
-                    Toast.makeText(Demo.this, "Gana el Jugador 1", Toast.LENGTH_SHORT).show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            finish();
-                            startActivity(getIntent());
-                        }
-                    }, 3000);
-
-
-                } else if (contJ1 < contJ2) {
-
-                    Toast.makeText(Demo.this, "Gana el Jugador 2", Toast.LENGTH_SHORT).show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            finish();
-                            startActivity(getIntent());
-                        }
-                    }, 3000);
-
-                } else {
-
+                if (Objects.equals(contJ1, contJ2)) {
                     Toast.makeText(Demo.this, "Empate", Toast.LENGTH_SHORT).show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            finish();
-                            startActivity(getIntent());
-                        }
-                    }, 3000);
-
+                    handlerEndGame();
+                } else if (contJ1 > contJ2 && contJ1 <= 100) {
+                    Toast.makeText(Demo.this, "Gana el Jugador 1", Toast.LENGTH_SHORT).show();
+                    handlerEndGame();
+                } else if (contJ2 > contJ1 && contJ2 <= 100) {
+                    Toast.makeText(Demo.this, "Gana el Jugador 2", Toast.LENGTH_SHORT).show();
+                    handlerEndGame();
                 }
-
-
             }
         }.start();
+    }
+
+    private void handlerEndGame() {
+        new Handler().postDelayed(() -> {
+            finish();
+            startActivity(getIntent());
+        }, 3000);
     }
 
     public void volver(View v){
