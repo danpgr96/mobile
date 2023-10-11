@@ -18,37 +18,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void navigateToActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
+    }
+
+    public void navigateToWebsite(String url) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
     public void playGame(View v) {
-        Intent i = new Intent(this, Play.class);
-        startActivity(i);
+        navigateToActivity(Play.class);
     }
 
     public void rules(View v) {
-        Intent i = new Intent(this, Rules.class);
-        startActivity(i);
+        navigateToActivity(Rules.class);
     }
 
     public void demo(View v) {
-        Intent i = new Intent(this, Demo.class);
-        startActivity(i);
+        navigateToActivity(Demo.class);
     }
 
     public void twitter(View v) {
-        Uri uri = Uri.parse("https://www.twitter.com/");
-        Intent i = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(i);
+        navigateToWebsite("https://www.twitter.com/");
     }
 
     public void instagram(View v) {
-        Uri uri = Uri.parse("https://www.instagram.com/");
-        Intent i = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(i);
+        navigateToWebsite("https://www.instagram.com/");
     }
 
     public void facebook(View v) {
-        Uri uri = Uri.parse("https://www.facebook.com/");
-        Intent i = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(i);
+        navigateToWebsite("https://www.facebook.com/");
     }
 
     public void salir(View v) {
