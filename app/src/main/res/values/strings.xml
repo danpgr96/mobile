@@ -15,4 +15,6 @@
     <string name="jugador1">oun ɹopɐƃnɾ</string>
     <string name="jugador2">Jugador dos</string>
     <string name="startDemoGame">Play</string>
+    <string name="jugador1Gana">¡Jugador 1 Gana!</string>
+    <string name="jugador2Gana">¡Jugador 2 Gana!</string>
 </resources>

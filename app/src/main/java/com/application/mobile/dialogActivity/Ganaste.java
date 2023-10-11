@@ -11,9 +11,7 @@ import com.application.mobile.R;
 import java.util.Objects;
 
 public class Ganaste extends AppCompatActivity {
-
     public Ganaste(Context contexto){
-
         final Dialog d = new Dialog(contexto);
         d.requestWindowFeature(Window.FEATURE_NO_TITLE);
         Objects.requireNonNull(d.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

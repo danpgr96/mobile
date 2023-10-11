@@ -3,6 +3,7 @@ package com.application.mobile.dialogActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -24,11 +25,11 @@ public class Demo extends AppCompatActivity {
     private Button btnEmpezarJ5;
     private ImageButton iBJugador1,iBJugador2,volver;
     private Integer contJ1 = 0, contJ2 = 0;
-
     private LinearLayout linea;
     private boolean isPulsado1 = false, isPulsado2 = false;
     private final Handler handlerJ1 = new Handler();
     private final Handler handlerJ2 = new Handler();
+    Context contexto;
 
     private final Runnable contadorRunnableJ1 = new Runnable() {
         @Override
@@ -112,6 +113,7 @@ public class Demo extends AppCompatActivity {
     }
 
     public void contadorTime() {
+        contexto = this;
         new CountDownTimer(10000, 1) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -129,13 +131,13 @@ public class Demo extends AppCompatActivity {
                 isPulsado2 = false;
 
                 if (Objects.equals(contJ1, contJ2)) {
-                    Toast.makeText(Demo.this, "Empate", Toast.LENGTH_SHORT).show();
+                    new JugadoresEmpate(contexto);
                     handlerEndGame();
                 } else if (contJ1 > contJ2 && contJ1 <= 100) {
-                    Toast.makeText(Demo.this, "Gana el Jugador 1", Toast.LENGTH_SHORT).show();
+                    new JugadorUnoGana(contexto);
                     handlerEndGame();
                 } else if (contJ2 > contJ1 && contJ2 <= 100) {
-                    Toast.makeText(Demo.this, "Gana el Jugador 2", Toast.LENGTH_SHORT).show();
+                    new JugadorDosGana(contexto);
                     handlerEndGame();
                 }
             }

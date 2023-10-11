@@ -13,7 +13,6 @@ import java.util.Objects;
 public class Empezar extends AppCompatActivity {
 
     public Empezar(Context contexto){
-
         final Dialog d = new Dialog(contexto);
         d.requestWindowFeature(Window.FEATURE_NO_TITLE);
         Objects.requireNonNull(d.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
