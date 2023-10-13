@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/splashBackground"
-    tools:context=".SplashScreen">
+    tools:context=".views.SplashScreen">
 
     <TextView
         android:id="@+id/tvTittle2"

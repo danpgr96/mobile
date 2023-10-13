@@ -1,8 +1,10 @@
-package com.application.mobile;
+package com.application.mobile.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.application.mobile.R;
 
 public class Rules extends AppCompatActivity {
 

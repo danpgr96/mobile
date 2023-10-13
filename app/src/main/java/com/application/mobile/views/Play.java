@@ -1,4 +1,4 @@
-package com.application.mobile;
+package com.application.mobile.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.application.mobile.R;
 import com.application.mobile.dialogActivity.Empataste;
 import com.application.mobile.dialogActivity.Empezar;
 import com.application.mobile.dialogActivity.Ganaste;
