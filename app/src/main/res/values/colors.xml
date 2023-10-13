@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background">#A19379</color>
+    <color name="splashBackground">#F4b839</color>
     <color name="colorPrimary">#EF6C00</color>
     <color name="colorPrimaryDark">#E65100</color>
+    <color name="tituloSplahColor">#8AC440</color>
     <color name="colorAccent">#D81B60</color>
     <color name="buttonStartColor">#D2691E</color>
     <color name="buttonEndColor">#D0E00B</color>

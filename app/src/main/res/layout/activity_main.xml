@@ -1,173 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#A19379"
-        tools:context=".juego1.Juego1">
+        android:layout_height="match_parent">
 
-        <ScrollView
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
 
-            <TableLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:stretchColumns="*">
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp"
+                android:gravity="center">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="5"
+                    android:src="@drawable/logo" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
+
+                <TextView
+                    android:id="@+id/tvTittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:fontFamily="casual"
                     android:gravity="center"
-                    android:layout_marginTop="15sp">
+                    android:text="@string/tittleText"
+                    android:textColor="#DCD6C9"
+                    android:textSize="55sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-                    <ImageView
-                        android:id="@+id/ivLogo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_span="5"
-                        tools:srcCompat="@drawable/logo" />
-                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15sp">
+                <Button
+                    android:id="@+id/buttonPlay"
+                    android:layout_width="168dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="serif-monospace"
+                    android:onClick="playGame"
+                    android:text="@string/play"
+                    android:textColor="#604A1B"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-                    <TextView
-                        android:id="@+id/tvTittle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_span="5"
-                        android:gravity="center"
-                        android:text="@string/tittleText"
-                        android:textColor="#DCD6C9"
-                        android:textSize="55sp"
-                        android:fontFamily="casual"
-                        android:textStyle="bold" />
-                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15sp">
+                <Button
+                    android:id="@+id/buttonRules"
+                    android:layout_width="168dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="serif-monospace"
+                    android:onClick="rules"
+                    android:text="@string/rules"
+                    android:textColor="#604A1B"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-                    <Button
-                        android:id="@+id/buttonPlay"
-                        android:layout_width="168dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_span="5"
-                        android:background="@android:color/transparent"
-                        android:fontFamily="serif-monospace"
-                        android:onClick="playGame"
-                        android:text="@string/play"
-                        android:textColor="#604A1B"
-                        android:textSize="35sp"
-                        android:textStyle="bold" />
-                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15sp">
+                <Button
+                    android:id="@+id/buttonDemo"
+                    android:layout_width="168dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="serif-monospace"
+                    android:onClick="demo"
+                    android:text="@string/demo"
+                    android:textColor="#604A1B"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-                    <Button
-                        android:id="@+id/buttonRules"
-                        android:layout_width="168dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_span="5"
-                        android:background="@android:color/transparent"
-                        android:fontFamily="serif-monospace"
-                        android:onClick="rules"
-                        android:text="@string/rules"
-                        android:textColor="#604A1B"
-                        android:textSize="35sp"
-                        android:textStyle="bold" />
-                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15sp">
+                <Button
+                    android:id="@+id/buttonSalir"
+                    android:layout_width="168dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="serif-monospace"
+                    android:onClick="salir"
+                    android:text="@string/salir"
+                    android:textColor="#604A1B"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-                    <Button
-                        android:id="@+id/buttonDemo"
-                        android:layout_width="168dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_span="5"
-                        android:background="@android:color/transparent"
-                        android:fontFamily="serif-monospace"
-                        android:text="@string/demo"
-                        android:textColor="#604A1B"
-                        android:onClick="demo"
-                        android:textSize="35sp"
-                        android:textStyle="bold" />
-                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp"
+                android:gravity="center">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15sp">
+                <ImageButton
+                    android:id="@+id/ibFacebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="facebook"
+                    android:src="@drawable/facebook" />
 
-                    <Button
-                        android:id="@+id/buttonSalir"
-                        android:layout_width="168dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_span="5"
-                        android:background="@android:color/transparent"
-                        android:fontFamily="serif-monospace"
-                        android:onClick="salir"
-                        android:text="@string/salir"
-                        android:textColor="#604A1B"
-                        android:textSize="35sp"
-                        android:textStyle="bold" />
-                </TableRow>
+                <ImageButton
+                    android:id="@+id/ibInstagram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="instagram"
+                    android:src="@drawable/instagram" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_marginTop="15sp">
+                <ImageButton
+                    android:id="@+id/ibTwitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="twitter"
+                    android:src="@drawable/twitter" />
 
-                    <ImageButton
-                        android:id="@+id/ibFacebook"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:onClick="facebook"
-                        android:src="@drawable/facebook" />
+            </TableRow>
 
-                    <ImageButton
-                        android:id="@+id/ibInstagram"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:onClick="instagram"
-                        android:src="@drawable/instagram" />
+        </TableLayout>
+    </ScrollView>
 
-                    <ImageButton
-                        android:id="@+id/ibTwitter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:onClick="twitter"
-                        android:src="@drawable/twitter" />
-
-                </TableRow>
-
-            </TableLayout>
-        </ScrollView>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

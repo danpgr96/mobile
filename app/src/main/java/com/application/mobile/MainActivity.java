@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.application.mobile.dialogActivity.Demo;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // quitarMenuSuperiorEinferior();
         setContentView(R.layout.activity_main);
     }
 
@@ -60,5 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 .setCancelable(false)
                 .setNegativeButton("No", null)
                 .setPositiveButton("Si", (dialog, which) -> moveTaskToBack(true)).show();
+    }
+
+    private void quitarMenuSuperiorEinferior() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 }
