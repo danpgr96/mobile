@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">GameHub</string>
-    <string name="tittleText">GameHub</string>
-    <string name="play">Jugar</string>
+    <string name="rpsPlus">RPS Plus</string>
     <string name="rules">Reglas</string>
-    <string name="demo">Demo</string>
+    <string name="holdIt">Hold It!</string>
     <string name="salir">Salir</string>
     <string name="ia">IA</string>
     <string name="jugador">Jugador</string>

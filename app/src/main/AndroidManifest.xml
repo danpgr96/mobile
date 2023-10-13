@@ -31,13 +31,13 @@
             android:name=".dialogActivity.JugadorUnoGana"
             android:exported="false" />
         <activity
-            android:name=".dialogActivity.Demo"
+            android:name=".views.HoldIt"
             android:exported="false" />
         <activity
             android:name=".views.Rules"
             android:exported="false" />
         <activity
-            android:name=".views.Play"
+            android:name=".views.RpsPlus"
             android:exported="false" />
         <activity
             android:name=".views.MainActivity"

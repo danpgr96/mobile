@@ -1,4 +1,4 @@
-package com.application.mobile.dialogActivity;
+package com.application.mobile.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,13 +13,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.application.mobile.R;
+import com.application.mobile.dialogActivity.JugadorDosGana;
+import com.application.mobile.dialogActivity.JugadorUnoGana;
+import com.application.mobile.dialogActivity.JugadoresEmpate;
 
 import java.util.Objects;
 
-public class Demo extends AppCompatActivity {
+public class HoldIt extends AppCompatActivity {
 
     private TextView puntuacion1,puntuacion2,contador;
     private Button btnEmpezarJ5;
@@ -57,7 +59,7 @@ public class Demo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo);
+        setContentView(R.layout.activity_hold_it);
 
         puntuacion1 = findViewById(R.id.tvPuntuacionJ1);
         puntuacion2 = findViewById(R.id.tvPuntuacionJ2);

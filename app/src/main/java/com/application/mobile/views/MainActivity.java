@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.application.mobile.Generic;
 import com.application.mobile.R;
-import com.application.mobile.dialogActivity.Demo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playGame(View v) {
-        Generic.navigateToActivity(this, Play.class);
+        Generic.navigateToActivity(this, RpsPlus.class);
     }
 
     public void rules(View v) {
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void demo(View v) {
-        Generic.navigateToActivity(this, Demo.class);
+        Generic.navigateToActivity(this, HoldIt.class);
     }
 
     public void twitter(View v) {

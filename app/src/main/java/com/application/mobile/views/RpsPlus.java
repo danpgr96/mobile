@@ -18,7 +18,7 @@ import com.application.mobile.dialogActivity.Perdiste;
 import java.util.Objects;
 import java.util.Random;
 
-public class Play extends AppCompatActivity {
+public class RpsPlus extends AppCompatActivity {
 
     private TextView txtMarcadorIa,txtMarcadorJugador;
     private ImageView iaSelect,jugadorSelect;
@@ -29,7 +29,7 @@ public class Play extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play);
+        setContentView(R.layout.activity_rps_plus);
 
         txtMarcadorIa = findViewById(R.id.tvIaMarcador);
         txtMarcadorJugador = findViewById(R.id.tvJugadorMarcador);
