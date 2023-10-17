@@ -3,6 +3,7 @@
     <string name="rpsPlus">RPS Plus</string>
     <string name="rules">Reglas</string>
     <string name="holdIt">Hold It!</string>
+    <string name="ticTacToe">Tic Tac Toe</string>
     <string name="salir">Salir</string>
     <string name="ia">IA</string>
     <string name="jugador">Jugador</string>
@@ -16,4 +17,9 @@
     <string name="startDemoGame">Play</string>
     <string name="jugador1Gana">¡Jugador 1 Gana!</string>
     <string name="jugador2Gana">¡Jugador 2 Gana!</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="jugadorXGana">¡Jugador X Gana!</string>
+    <string name="jugadorOGana">¡Jugador O Gana!</string>
+    <string name="jugador1TicTacToe">Jugador X: 0</string>
+    <string name="jugador2TicTacToe">Jugador O: 0</string>
 </resources>

@@ -1,7 +1,5 @@
 package com.application.mobile.dialogActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -12,7 +10,7 @@ import com.application.mobile.R;
 
 import java.util.Objects;
 
-public class JugadorUnoGana extends AppCompatActivity {
+public class JugadorUnoGana {
     public JugadorUnoGana(Context contexto){
         final Dialog d = new Dialog(contexto);
         d.requestWindowFeature(Window.FEATURE_NO_TITLE);

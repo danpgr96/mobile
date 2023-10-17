@@ -25,23 +25,27 @@ public class MainActivity extends AppCompatActivity {
         Generic.navigateToActivity(this, Rules.class);
     }
 
-    public void demo(View v) {
+    public void holdIt(View v) {
         Generic.navigateToActivity(this, HoldIt.class);
     }
 
+    public void ticTacToe(View v) {
+        Generic.navigateToActivity(this, TitTacToe.class);
+    }
+
     public void twitter(View v) {
-        Generic.navigateToWebsite(this,"https://www.twitter.com/");
+        Generic.navigateToWebsite(this,Generic.URL_TWITTER);
     }
 
     public void instagram(View v) {
-        Generic.navigateToWebsite(this,"https://www.instagram.com/");
+        Generic.navigateToWebsite(this,Generic.URL_IG);
     }
 
     public void facebook(View v) {
-        Generic.navigateToWebsite(this,"https://www.facebook.com/");
+        Generic.navigateToWebsite(this,Generic.URL_FB);
     }
 
-    public void salir(View v) {
+    public void salir() {
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.alertsalir)
                 .setTitle("¿Seguro qué quieres salir?")

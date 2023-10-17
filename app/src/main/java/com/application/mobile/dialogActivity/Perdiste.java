@@ -5,12 +5,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Window;
-import androidx.appcompat.app.AppCompatActivity;
 import com.application.mobile.R;
 
 import java.util.Objects;
 
-public class Perdiste extends AppCompatActivity {
+public class Perdiste {
 
     public Perdiste(Context contexto){
 

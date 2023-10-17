@@ -75,15 +75,35 @@
                 android:layout_marginTop="15sp">
 
                 <Button
-                    android:id="@+id/buttonDemo"
+                    android:id="@+id/buttonHoldIt"
                     android:layout_width="168dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_span="5"
                     android:background="@android:color/transparent"
                     android:fontFamily="serif-monospace"
-                    android:onClick="demo"
+                    android:onClick="holdIt"
                     android:text="@string/holdIt"
+                    android:textColor="#604A1B"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
+
+                <Button
+                    android:id="@+id/buttonTicTacToe"
+                    android:layout_width="168dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="serif-monospace"
+                    android:onClick="ticTacToe"
+                    android:text="@string/ticTacToe"
                     android:textColor="#604A1B"
                     android:textSize="35sp"
                     android:textStyle="bold" />

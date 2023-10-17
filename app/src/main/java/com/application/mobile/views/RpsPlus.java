@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.application.mobile.Generic;
 import com.application.mobile.R;
 import com.application.mobile.dialogActivity.Empataste;
 import com.application.mobile.dialogActivity.Empezar;
@@ -40,45 +41,48 @@ public class RpsPlus extends AppCompatActivity {
         scrollView = findViewById(R.id.scrollView);
     }
 
-    public void piedra(View v){
+    public void seleccionJugador(View v) {
         contexto = this;
-        jugadorSelect.setImageResource(R.drawable.piedra);
-        logicPartida(turno("Piedra"), contexto);
+        String opcion = (String) v.getTag();
+        int resourceId = getResourceId(opcion);
+
+        if (resourceId != 0) {
+            jugadorSelect.setImageResource(resourceId);
+            logicPartida(turno(opcion), contexto);
+        }
     }
 
-    public void papel(View v){
-        contexto = this;
-        jugadorSelect.setImageResource(R.drawable.papel);
-        logicPartida(turno("Papel"), contexto);
-    }
-
-    public void tijera(View v){
-        contexto = this;
-        jugadorSelect.setImageResource(R.drawable.tijeras);
-        logicPartida(turno("Tijera"), contexto);
-    }
-
-    public void lagarto(View v){
-        contexto = this;
-        jugadorSelect.setImageResource(R.drawable.lagarto);
-        logicPartida(turno("Lagarto"), contexto);
-    }
-
-    public void spock(View v){
-        contexto = this;
-        jugadorSelect.setImageResource(R.drawable.spock);
-        logicPartida(turno("Spock"), contexto);
+    private int getResourceId(String opcion) {
+        int resourceId = 0;
+        switch (opcion) {
+            case Generic.PIEDRA_LOWERCASE:
+                resourceId = R.drawable.piedra;
+                break;
+            case Generic.PAPEL_LOWERCASE:
+                resourceId = R.drawable.papel;
+                break;
+            case Generic.TIJERA_LOWERCASE:
+                resourceId = R.drawable.tijeras;
+                break;
+            case Generic.LAGARTO_LOWERCASE:
+                resourceId = R.drawable.lagarto;
+                break;
+            case Generic.SPOK_LOWERCASE:
+                resourceId = R.drawable.spock;
+                break;
+        }
+        return resourceId;
     }
 
     private void logicPartida(String mensaje, Context context) {
         switch (mensaje) {
-            case "GANASTE":
+            case Generic.GANASTE_UPPERCASE:
                 new Ganaste(context);
                 break;
-            case "EMPATE":
+            case Generic.EMPATE_UPPERCASE:
                 new Empataste(context);
                 break;
-            case "PERDISTE":
+            case Generic.PERDISTE_UPPERCASE:
                 new Perdiste(context);
                 break;
         }
@@ -112,55 +116,55 @@ public class RpsPlus extends AppCompatActivity {
         int ia_selecciono_num = r.nextInt(5)+1;
 
         if (ia_selecciono_num == 1){
-            ia_selecciono ="Piedra";
+            ia_selecciono = Generic.PIEDRA_LOWERCASE;
         }else if (ia_selecciono_num == 2) {
-            ia_selecciono = "Papel";
+            ia_selecciono = Generic.PAPEL_LOWERCASE;
         }else if (ia_selecciono_num == 3) {
-            ia_selecciono = "Tijera";
+            ia_selecciono = Generic.TIJERA_LOWERCASE;
         }else if (ia_selecciono_num == 4) {
-            ia_selecciono = "Lagarto";
+            ia_selecciono = Generic.LAGARTO_LOWERCASE;
         }else {
-            ia_selecciono = "Spock";
+            ia_selecciono = Generic.SPOK_LOWERCASE;
         }
 
         switch (ia_selecciono) {
-            case "Piedra":
+            case Generic.PIEDRA_LOWERCASE:
                 iaSelect.setImageResource(R.drawable.piedra);
                 break;
-            case "Papel":
+            case Generic.PAPEL_LOWERCASE:
                 iaSelect.setImageResource(R.drawable.papel);
                 break;
-            case "Tijera":
+            case Generic.TIJERA_LOWERCASE:
                 iaSelect.setImageResource(R.drawable.tijeras);
                 break;
-            case "Lagarto":
+            case Generic.LAGARTO_LOWERCASE:
                 iaSelect.setImageResource(R.drawable.lagarto);
                 break;
-            case "Spock":
+            case Generic.SPOK_LOWERCASE:
                 iaSelect.setImageResource(R.drawable.spock);
                 break;
         }
 
         if (ia_selecciono.equals(elige)){
-            return "EMPATE";
-        }else if (Objects.equals(elige, "Piedra") && (ia_selecciono.equals("Tijera") || ia_selecciono.equals("Lagarto"))){
+            return Generic.EMPATE_UPPERCASE;
+        }else if (Objects.equals(elige, Generic.PIEDRA_LOWERCASE) && (ia_selecciono.equals(Generic.TIJERA_LOWERCASE) || ia_selecciono.equals(Generic.LAGARTO_LOWERCASE))){
             puntuacionJugador++;
-            return "GANASTE";
-        }else if (Objects.equals(elige, "Tijera") && (ia_selecciono.equals("Papel") || ia_selecciono.equals("Lagarto"))){
+            return Generic.GANASTE_UPPERCASE;
+        }else if (Objects.equals(elige, Generic.TIJERA_LOWERCASE) && (ia_selecciono.equals(Generic.PAPEL_LOWERCASE) || ia_selecciono.equals(Generic.LAGARTO_LOWERCASE))){
             puntuacionJugador++;
-            return "GANASTE";
-        }else if (Objects.equals(elige, "Papel") && (ia_selecciono.equals("Piedra") || ia_selecciono.equals("Spock"))){
+            return Generic.GANASTE_UPPERCASE;
+        }else if (Objects.equals(elige, Generic.PAPEL_LOWERCASE) && (ia_selecciono.equals(Generic.PIEDRA_LOWERCASE) || ia_selecciono.equals(Generic.SPOK_LOWERCASE))){
             puntuacionJugador++;
-            return "GANASTE";
-        }else if (Objects.equals(elige, "Lagarto") && (ia_selecciono.equals("Spock") || ia_selecciono.equals("Papel"))){
+            return Generic.GANASTE_UPPERCASE;
+        }else if (Objects.equals(elige, Generic.LAGARTO_LOWERCASE) && (ia_selecciono.equals(Generic.SPOK_LOWERCASE) || ia_selecciono.equals(Generic.PAPEL_LOWERCASE))){
             puntuacionJugador++;
-            return "GANASTE";
-        }else if (Objects.equals(elige, "Spock") && (ia_selecciono.equals("Tijera") || ia_selecciono.equals("Piedra"))){
+            return Generic.GANASTE_UPPERCASE;
+        }else if (Objects.equals(elige, Generic.SPOK_LOWERCASE) && (ia_selecciono.equals(Generic.TIJERA_LOWERCASE) || ia_selecciono.equals(Generic.PIEDRA_LOWERCASE))){
             puntuacionJugador++;
-            return "GANASTE";
+            return Generic.GANASTE_UPPERCASE;
         }else {
             puntuacionMaguina++;
-            return "PERDISTE";
+            return Generic.PERDISTE_UPPERCASE;
         }
     }
 }
