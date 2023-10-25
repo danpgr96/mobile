@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "725123608421",
+    "project_id": "gamehud-c5d61",
+    "storage_bucket": "gamehud-c5d61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725123608421:android:c9088ae76653784a333b8c",
+        "android_client_info": {
+          "package_name": "com.application.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnS1Wxn_mkwEzlfXY0cOiWLDapnBdp8_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

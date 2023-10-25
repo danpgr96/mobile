@@ -9,6 +9,9 @@
     <color name="colorRed">#FF0000</color>
     <color name="buttonStartColor">#D2691E</color>
     <color name="buttonEndColor">#D0E00B</color>
+    <color name="whiteColor">#FFFFFF</color>
     <color name="textColor">#DCD6C9</color>
     <color name="borderButton">#223593</color>
+    <color name="spinButton">#EF6C00</color>
+    <color name="avButton">#F4b839</color>
 </resources>

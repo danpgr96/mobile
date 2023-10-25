@@ -55,6 +55,26 @@
                 android:layout_marginTop="15sp">
 
                 <Button
+                    android:id="@+id/buttonPlayBasic"
+                    android:layout_width="168dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_span="5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="serif-monospace"
+                    android:onClick="playGameRpsBasic"
+                    android:text="@string/rpsBasic"
+                    android:textColor="#604A1B"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15sp">
+
+                <Button
                     android:id="@+id/buttonPlay"
                     android:layout_width="168dp"
                     android:layout_height="wrap_content"
@@ -62,7 +82,7 @@
                     android:layout_span="5"
                     android:background="@android:color/transparent"
                     android:fontFamily="serif-monospace"
-                    android:onClick="playGame"
+                    android:onClick="playGameRpsPlus"
                     android:text="@string/rpsPlus"
                     android:textColor="#604A1B"
                     android:textSize="35sp"
@@ -122,8 +142,8 @@
                     android:layout_span="5"
                     android:background="@android:color/transparent"
                     android:fontFamily="serif-monospace"
-                    android:onClick="rules"
-                    android:text="@string/rules"
+                    android:onClick="slotMachine"
+                    android:text="@string/slotMachine"
                     android:textColor="#604A1B"
                     android:textSize="35sp"
                     android:textStyle="bold" />

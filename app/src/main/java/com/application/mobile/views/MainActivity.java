@@ -17,12 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void playGame(View v) {
+    public void playGameRpsBasic(View v) {
+        Generic.navigateToActivity(this, RpsBasic.class);
+    }
+    public void playGameRpsPlus(View v) {
         Generic.navigateToActivity(this, RpsPlus.class);
     }
 
-    public void rules(View v) {
-        Generic.navigateToActivity(this, Rules.class);
+    public void slotMachine(View v) {
+        Generic.navigateToActivity(this, SlotMachine.class);
     }
 
     public void holdIt(View v) {
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Generic.navigateToWebsite(this,Generic.URL_FB);
     }
 
-    public void salir() {
+    public void salir(View v) {
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.alertsalir)
                 .setTitle("¿Seguro qué quieres salir?")

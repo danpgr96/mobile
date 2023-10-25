@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">GameHub</string>
+    <string name="rpsBasic">RPS Basic</string>
     <string name="rpsPlus">RPS Plus</string>
     <string name="rules">Reglas</string>
     <string name="holdIt">Hold It!</string>
+    <string name="slotMachine">Slot Machine</string>
+    <string name="slotSaldo">Saldo: 100 €</string>
+    <string name="precio">Precio tirada: 10€</string>
     <string name="ticTacToe">Tic Tac Toe</string>
     <string name="salir">Salir</string>
     <string name="ia">IA</string>
@@ -22,4 +26,6 @@
     <string name="jugadorOGana">¡Jugador O Gana!</string>
     <string name="jugador1TicTacToe">Jugador X: 0</string>
     <string name="jugador2TicTacToe">Jugador O: 0</string>
+    <string name="avTextSlotMachine">AV</string>
+    <string name="spinTextSlotMachine">SPIN</string>
 </resources>
