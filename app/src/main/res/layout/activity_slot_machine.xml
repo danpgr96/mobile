@@ -93,6 +93,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_slot_machine_av"
                     android:text="@string/avTextSlotMachine"
+                    android:textColor="@color/blackColor"
+                    android:textStyle="bold"
                     android:layout_weight="1" />
 
                 <Button
@@ -101,6 +103,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_slot_machine_av"
                     android:text="@string/avTextSlotMachine"
+                    android:textColor="@color/blackColor"
+                    android:textStyle="bold"
                     android:layout_weight="1" />
 
                 <Button
@@ -109,6 +113,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_slot_machine_av"
                     android:text="@string/avTextSlotMachine"
+                    android:textColor="@color/blackColor"
+                    android:textStyle="bold"
                     android:layout_weight="1" />
 
                 <Button
@@ -117,6 +123,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_slot_machine_spin"
                     android:text="@string/spinTextSlotMachine"
+                    android:textColor="@color/blackColor"
+                    android:textStyle="bold"
                     android:layout_weight="1" />
             </TableRow>
 

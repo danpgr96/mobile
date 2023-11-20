@@ -49,7 +49,7 @@ public class SlotMachine extends AppCompatActivity {
 
         msg.setText("Saldo: " + coins + " €");
 
-        disableAvButtons();
+        disableBtnAv();
 
         btnSpin.setOnClickListener(view -> {
             if (coins == 0){
@@ -58,7 +58,8 @@ public class SlotMachine extends AppCompatActivity {
             coins = coins - 10;
             msg.setText("Saldo: " + coins + " €");
 
-            disableButtons();
+            disableBtnSpin();
+            disableBtnAv();
 
             wheel1 = new Wheel(img -> runOnUiThread(() -> img1.setImageResource(img)), 200, randomLong(0, 200));
             wheel1.start();
@@ -84,7 +85,6 @@ public class SlotMachine extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {}
 
-            @SuppressLint("UnsafeIntentLaunch")
             @Override
             public void onFinish() {
                 wheel1.stopWheel();
@@ -92,9 +92,9 @@ public class SlotMachine extends AppCompatActivity {
                 wheel3.stopWheel();
 
                 if (wheel1.currentIndex == wheel2.currentIndex && wheel2.currentIndex == wheel3.currentIndex) {
-                    coins = coins + 30;
+                    coins = coins + 50;
                     msg.setText("Saldo: " + coins + " €");
-                    Toast.makeText(SlotMachine.this,"Ganaste 30€", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SlotMachine.this,"Ganaste 50€", Toast.LENGTH_LONG).show();
                 } else if (wheel1.currentIndex == wheel2.currentIndex || wheel2.currentIndex == wheel3.currentIndex
                         || wheel1.currentIndex == wheel3.currentIndex) {
                     starAv = true;
@@ -102,17 +102,17 @@ public class SlotMachine extends AppCompatActivity {
                     Toast.makeText(SlotMachine.this,"Perdiste!", Toast.LENGTH_LONG).show();
                 }
                 if (!starAv) {
-                    enableSpinButton();
+                    disableBtnAv();
+                    enableBtnSpin();
                     cancel();
                 } else {
                     if (new Random().nextBoolean()) {
-                        btnSpin.setEnabled(false);
-                        btnAv1.setEnabled(true);
-                        btnAv2.setEnabled(true);
-                        btnAv3.setEnabled(true);
+                        disableBtnSpin();
+                        enableBtnAv();
                     } else {
                         cancel();
-                        enableSpinButton();
+                        disableBtnAv();
+                        enableBtnSpin();
                     }
                 }
             }
@@ -120,51 +120,63 @@ public class SlotMachine extends AppCompatActivity {
         starAv = false;
     }
 
-    private void disableButtons() {
-        btnSpin.setEnabled(false);
-        btnAv1.setEnabled(false);
-        btnAv2.setEnabled(false);
-        btnAv3.setEnabled(false);
-    }
-
-    private void disableAvButtons() {
-        btnAv1.setEnabled(false);
-        btnAv2.setEnabled(false);
-        btnAv3.setEnabled(false);
-    }
-
-    private void enableSpinButton() {
-        btnSpin.setEnabled(true);
-        btnAv1.setEnabled(false);
-        btnAv2.setEnabled(false);
-        btnAv3.setEnabled(false);
-    }
-
     private void validacionWheels() {
         if (wheel1.currentIndex == wheel2.currentIndex && wheel2.currentIndex == wheel3.currentIndex) {
-            coins = coins + 30;
+            coins = coins + 50;
+            msg.setText("Saldo: " + coins + " €");
             Toast.makeText(SlotMachine.this,"Ganaste 50€", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(SlotMachine.this,"Perdiste!", Toast.LENGTH_LONG).show();
         }
-        enableSpinButton();
+        disableBtnAv();
+        enableBtnSpin();
     }
 
     private void validarNextValue(Wheel wheel) {
         wheel.setNewImage();
         if (next == 2) {
-            disableAvButtons();
+            disableBtnAv();
             validacionWheels();
             next = 0;
         } else {
             next++;
             if (wheel1.currentIndex == wheel2.currentIndex && wheel2.currentIndex == wheel3.currentIndex) {
-                coins = coins + 30;
+                coins = coins + 50;
+                msg.setText("Saldo: " + coins + " €");
                 Toast.makeText(SlotMachine.this,"Ganaste 50€", Toast.LENGTH_LONG).show();
-                disableAvButtons();
-                enableSpinButton();
+                disableBtnAv();
+                enableBtnSpin();
             }
         }
+    }
+
+
+    private void disableBtnSpin() {
+        btnSpin.setEnabled(false);
+        btnSpin.setBackgroundResource(R.drawable.button_slot_machine_spin_disable);
+    }
+
+    private void enableBtnSpin() {
+        btnSpin.setEnabled(true);
+        btnSpin.setBackgroundResource(R.drawable.button_slot_machine_spin);
+    }
+
+    private void disableBtnAv() {
+        btnAv1.setEnabled(false);
+        btnAv1.setBackgroundResource(R.drawable.button_slot_machine_av_disable);
+        btnAv2.setEnabled(false);
+        btnAv2.setBackgroundResource(R.drawable.button_slot_machine_av_disable);
+        btnAv3.setEnabled(false);
+        btnAv3.setBackgroundResource(R.drawable.button_slot_machine_av_disable);
+    }
+
+    private void enableBtnAv() {
+        btnAv1.setEnabled(true);
+        btnAv1.setBackgroundResource(R.drawable.button_slot_machine_av);
+        btnAv2.setEnabled(true);
+        btnAv2.setBackgroundResource(R.drawable.button_slot_machine_av);
+        btnAv3.setEnabled(true);
+        btnAv3.setBackgroundResource(R.drawable.button_slot_machine_av);
     }
 
     public void volver (View v){
